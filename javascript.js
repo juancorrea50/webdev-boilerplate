@@ -8,7 +8,7 @@ if(userName === 'Admin'){
     } else if(pass == '' || pass == null){
         alert('Canceled');
     } else {
-        alert('Wrong Password');
+        alert('User Not Found');
     }
 } else if(userName === '' || userName === null){
     alert('Canceled');
