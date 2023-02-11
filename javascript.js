@@ -1,4 +1,5 @@
 //Admin Check example for conditionals and if/else statements
+/*
 let userName = prompt("Who's there?", '');
 
 if(userName === 'Admin'){
@@ -67,3 +68,11 @@ switch(month) {
     default:
         console.log(`Something went wrong`);
 }
+*/
+//Ternary example
+let isBirthday = true;
+const greeting = isBirthday
+? 'Happy Birthday!!'
+: 'Greetings!'
+
+console.log(greeting);
