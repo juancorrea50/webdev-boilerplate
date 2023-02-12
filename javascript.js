@@ -1,5 +1,5 @@
 //Admin Check example for conditionals and if/else statements
-/*
+
 let userName = prompt("Who's there?", '');
 
 if(userName === 'Admin'){
@@ -76,7 +76,7 @@ const greeting = isBirthday
 : 'Greetings!'
 
 console.log(greeting);
-*/
+
 //Function basic structure
 function hello(name = 'random'){
     alert(`Hello ${name}`)
@@ -113,5 +113,20 @@ textbox.addEventListener('keydown', (event) =>
 textbox.addEventListener('keydown', event => 
     console.log(`You pressed ${event.key}`)
 );
+//Scope example
 
+let x = 1;/*<--- Global */
+function output(value){
+    /*function to print variable into the console or show as a para element */
+}
+
+function a(){
+    const y = 2;/*<--- local of the function */
+    output(y);
+}
+function b(){
+    const z = 3;/*<--- Variable cannot be called from the global scope */
+    output(z);/*<--- can be shown by using a function to call the value */
+}
+//Function variables cannot be called from outside the function itself because of it's scope.
  
