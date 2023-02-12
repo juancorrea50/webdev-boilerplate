@@ -68,11 +68,49 @@ switch(month) {
     default:
         console.log(`Something went wrong`);
 }
-*/
-//Ternary example
+
+//Ternary operator example
 let isBirthday = true;
 const greeting = isBirthday
 ? 'Happy Birthday!!'
 : 'Greetings!'
 
 console.log(greeting);
+*/
+//Function basic structure
+function hello(name = 'random'){
+    alert(`Hello ${name}`)
+}
+hello('Matilda');
+hello();
+
+//Anonymous Function
+(function () {
+    alert(`hello`);
+})
+/*This is used as a way to use a function as a parameter like so */
+textbox.addEventListener('keydown', function(event) {
+    console.log(`You pressed "${event.key}"`)
+});
+/*Depending on the dev an anonymous function can be used in this case or a premade function to use when a key is pressed */
+
+//Arrow function example
+(event) => {
+    console.log(`You presssed ${event.key}`);
+}
+//Arrow function in previous addeventlistener function example
+textbox.addEventListener('keydown', (event) => {
+    console.log(`You pressed ${event.key}`);
+})
+
+/*If the function has only one line in the curly brackets they can be removed */
+textbox.addEventListener('keydown', (event) => 
+    console.log(`You pressed ${event.key}`)/*<---From here */
+);/*<--- To here */
+/**Side note* if done this way move the semicolon from the statement to the outside of the function call */
+
+/*Also if the function only takes one parameter then the parenthesis can be removed */
+textbox.addEventListener('keydown', event => 
+    console.log(`You pressed ${event.key}`)
+);
+
