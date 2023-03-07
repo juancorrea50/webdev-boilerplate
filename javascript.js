@@ -129,4 +129,38 @@ function b(){
     output(z);/*<--- can be shown by using a function to call the value */
 }
 //Function variables cannot be called from outside the function itself because of it's scope.
- 
+
+//ARRAYS (oh boi...)
+
+//Syntax
+const cars = ['Saab', 'Volvo', 'BMW']; /*<-- Known as an array literal. Line breaks are not important. Also always use const
+keyword to create an array*/
+
+//Can also create an array then add elements
+const cars =[];
+cars[0]='Saab';
+cars[1]='Volvo';
+cars[2]='BMW';
+//Other way to type an array
+const cars = new Array('Saab', 'Volvo', 'BMW');
+//Preferred to use array literals
+
+/*ARRAY INDEXES START AT 0 */
+
+//Change the index of a specific array
+cars[0] = 'Opel';//<-- This changes the first index of cars to Opel
+
+//Refer to the array itself and it's contents
+console.log(cars);//<-- This prints the array contents to the console log
+//Arrays are objects
+console.log(typeof cars);//<-- Returns object
+//Array properties and methods
+cars.length//<-- Returns the number of elements
+cars.sort()//<-- Sorts the array
+//Accessing the first and last array
+let car = car[0];//<-- First Element
+let car = car[cars.length -1];//<-- Last Element
+//Looping Array elements
+for(let i =0; i<cars.length;i++){
+    cars[i] = 'BLANK';
+}
