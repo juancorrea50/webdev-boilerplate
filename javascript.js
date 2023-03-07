@@ -164,3 +164,12 @@ let car = car[cars.length -1];//<-- Last Element
 for(let i =0; i<cars.length;i++){
     cars[i] = 'BLANK';
 }
+//Or the forEach() function can do the same
+cars.forEach('BLANK');// same function as the previous example
+//Can also be used with a function
+cars.forEach(blank);
+
+function blank(value){
+    value = '';
+}
+//Same as the previous example just using a function
