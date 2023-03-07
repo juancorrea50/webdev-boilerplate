@@ -78,7 +78,7 @@ const greeting = isBirthday
 console.log(greeting);
 
 //Function basic structure
-function hello(name = 'random'){
+function hello(name = 'random'){/*<--- Set a default parameter like this to avoid errors */
     alert(`Hello ${name}`)
 }
 hello('Matilda');
@@ -89,7 +89,7 @@ hello();
     alert(`hello`);
 })
 /*This is used as a way to use a function as a parameter like so */
-textbox.addEventListener('keydown', function(event) {
+textbox.addEventListener('keydown', function(event) {/*<--- 'event' refers to the action of the keydown event */
     console.log(`You pressed "${event.key}"`)
 });
 /*Depending on the dev an anonymous function can be used in this case or a premade function to use when a key is pressed */
