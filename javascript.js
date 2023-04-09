@@ -173,3 +173,46 @@ function blank(value){
     value = '';
 }
 //Same as the previous example just using a function
+
+//DOM manipulations
+/* DOM(Document Object Model) refers to the relationship between all the elements in a webpage or a tree of nodes(children with a parent) 
+*/
+//SEE HTML FOR EXAMPLE OF CHILDREN AND PARENT
+
+//You can also use firstElementChild and lastElementChild
+console.dir(container.firstElementChild);
+//selects the first child of #container => .display
+
+console.dir(controls.previousElementSibling);
+//selects the prior sibling => .display
+
+/*
+    Simplifying it, you are essentially directing the program node to node by the node's relationship to the siblings or parent
+ */
+//The querySelector function allows an element to be selected and assigned to a variable in javascript to be manipulated with javascript.
+const container = document.querySelector('#container');
+//selects the #container div
+const controls = document.querySelector('.controls');
+//selects the .controls div
+//There is querySelectorAll that returns a nodelist of all the nodes that have the same selector that was entered into the parameters.
+const allLists = document.querySelectorAll('li');
+//returns a nodelist of all the 'li' list elements
+/*
+    All nodelists are not Arrays but can be converted to one by using Array.from(allLists) or using the spread operator(...allLists)
+*/
+
+//Creating an element allows for more interactivity
+
+const div = document.createElement('div');
+//Creates a div elements connected to the div variable
+
+//However this DOES NOT add it to the DOM. It only creates it in memory so that styles can be added to it before it is applied.
+
+//The new child can be added into the DOM with one of the following methods.
+
+container.appendChild(div);
+//This function adds the div created as a child to #container. A way to look at it is like this: parentNode.appendChild(childNode)
+container.insertBefore(div, controls) 
+/*This function adds the div created before controls in the #container siblings. 
+    A way to look at it is like this: parentNode.insertBefore(newNode, referenceNode)<referenceNode being one of parentNode's children>
+*/
