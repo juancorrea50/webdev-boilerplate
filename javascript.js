@@ -178,6 +178,8 @@ function blank(value){
 /* DOM(Document Object Model) refers to the relationship between all the elements in a webpage or a tree of nodes(children with a parent) 
 */
 //SEE HTML FOR EXAMPLE OF CHILDREN AND PARENT
+//AN HTML FILE IS ESSENTIALLY A DOM IN JAVA. THIS ALLOWS FOR THE HTML ON A WEBPAGE TO BE MANIPULATED WITH JAVASCRIPT
+/* A NODE IS AN ELEMENT OF AN HTML ASSIGNED TO A VARIABLE IN JAVASCRIPT */
 
 //You can also use firstElementChild and lastElementChild
 console.dir(container.firstElementChild);
@@ -208,11 +210,66 @@ const div = document.createElement('div');
 
 //However this DOES NOT add it to the DOM. It only creates it in memory so that styles can be added to it before it is applied.
 
-//The new child can be added into the DOM with one of the following methods.
+//The new child can be added into the DOM and reflected on the html page with one of the following methods.
 
 container.appendChild(div);
 //This function adds the div created as a child to #container. A way to look at it is like this: parentNode.appendChild(childNode)
 container.insertBefore(div, controls) 
 /*This function adds the div created before controls in the #container siblings. 
     A way to look at it is like this: parentNode.insertBefore(newNode, referenceNode)<referenceNode being one of parentNode's children>
+*/
+//A node can also be removed by the following
+container.removeChild(div);
+//This removes div as a child of #container
+
+//Elements can also be altered 
+const div = document.createElement('div');
+
+div.style.color = 'blue';
+//or
+div.style.cssText = 'color: blue; background: white;';
+//adds more than one styling to the div created
+//or
+div.setAttribute('style', 'color: blue; bnackground: white;');
+//same as the other but setAttribute allows for more attributes to be changed
+/*
+    Note: kebab-cased CSS rule turns into camelCase rule when accessing a css property
+    background-color == backgroundColor
+*/
+div.style.backgroundColor //Correct syntax when accessing the style of an element from js
+
+//The attributes of a node can also be changed
+div.setAttribute('id', 'theDiv');
+//sets the id of the div to #theDiv
+div.getAttribute('id');
+//returns the id of the div node
+div.removeAttribute('id');
+//removes the id of the div node
+
+//In order to add a class it is preferred to use classList
+div.classList.add('new');
+//adds class 'new' to the div node
+div.classList.remove('new');
+//removes 'new' class from div node
+div.classList.toggle('active');
+//toggle adds and removes class 'active' from the div node
+/* toggle is the standard as it is cleaner than adding or removing inline CSS */
+
+//Text content can be added via textContent
+div.textContent = 'Hello World!';
+//creates a text node containing 'Hello World!' and inserts it in div
+/* innerHTML can be used however it raises security concerns as anyone can then access the DOM and manipulate it */
+
+//Events are things like button clicks and hovering the mouse over an element
+onclick onmousedown
+/*Not a comprehensive list */
+
+//Event listeners are prefered to the above but are still seen today
+
+//All of these use functions to add a purpose to buttons or nodes on a webpage
+
+
+
+/*
+    REFER TO OFFLINE FOLDER OF ./dom-manipulation IN WSL UBUNTU FOR A COMPLETED EXERCISE OF THIS AND EVENT LISTENERS
 */
